@@ -1,0 +1,186 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Usuario\Desktop\SD\Aula 15\continuação\final\simulation\modelsim
+Edatapath
+Z1 w1561848855
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dC:\Users\Usuario\Desktop\SD\Aula 15\continuação\final\simulation\modelsim
+Z6 8C:/Users/Usuario/Desktop/SD/Aula 15/continuação/final/datapath.vhd
+Z7 FC:/Users/Usuario/Desktop/SD/Aula 15/continuação/final/datapath.vhd
+l0
+L5
+VljV@Na^1=P5?XNk?ToWe20
+Z8 OV;C;10.1d;51
+31
+Z9 !s108 1561925633.152000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/Usuario/Desktop/SD/Aula 15/continuação/final/datapath.vhd|
+Z11 !s107 C:/Users/Usuario/Desktop/SD/Aula 15/continuação/final/datapath.vhd|
+Z12 o-93 -work work -O0
+Z13 tExplicit 1
+!s100 X3Tiobi@c:QXVV_nN6QZ;2
+!i10b 1
+Ahardware
+R2
+R3
+R4
+DEx4 work 8 datapath 0 22 ljV@Na^1=P5?XNk?ToWe20
+l42
+L20
+VfSi^KU[5_nRAWBKea4R`k2
+R8
+31
+R9
+R10
+R11
+R12
+R13
+!s100 77<m<?63m1[_ITfn;9d100
+!i10b 1
+Efinal
+Z14 w1561790974
+R2
+R3
+R4
+R5
+Z15 8C:/Users/Usuario/Desktop/SD/Aula 15/continuação/final/Final.vhd
+Z16 FC:/Users/Usuario/Desktop/SD/Aula 15/continuação/final/Final.vhd
+l0
+L5
+VQ?khaIYg?D>:M7_4ZnQ_Q3
+R8
+31
+Z17 !s108 1561925632.319000
+Z18 !s90 -reportprogress|300|-93|-work|work|C:/Users/Usuario/Desktop/SD/Aula 15/continuação/final/Final.vhd|
+Z19 !s107 C:/Users/Usuario/Desktop/SD/Aula 15/continuação/final/Final.vhd|
+R12
+R13
+!s100 H8PAa7[BK9<<o=PAg@a8T3
+!i10b 1
+Aarch_final
+R2
+R3
+R4
+DEx4 work 5 final 0 22 Q?khaIYg?D>:M7_4ZnQ_Q3
+l56
+L17
+V<FBS_?3[9EhZXY6`m[C072
+R8
+31
+R17
+R18
+R19
+R12
+R13
+!s100 i91SAf<?8=`@:U31FXL]d0
+!i10b 1
+Efsm
+Z20 w1561848454
+R3
+R4
+R5
+Z21 8C:/Users/Usuario/Desktop/SD/Aula 15/continuação/final/FSM.vhd
+Z22 FC:/Users/Usuario/Desktop/SD/Aula 15/continuação/final/FSM.vhd
+l0
+L5
+V]MUI8<?[:moCI;<B@mU`J3
+R8
+31
+Z23 !s108 1561925631.970000
+Z24 !s90 -reportprogress|300|-93|-work|work|C:/Users/Usuario/Desktop/SD/Aula 15/continuação/final/FSM.vhd|
+Z25 !s107 C:/Users/Usuario/Desktop/SD/Aula 15/continuação/final/FSM.vhd|
+R12
+R13
+!s100 ?VLVm5n^^0GfJ=0[T_VU61
+!i10b 1
+Aarch_fsm
+R3
+R4
+DEx4 work 3 fsm 0 22 ]MUI8<?[:moCI;<B@mU`J3
+l27
+L24
+VNYSZ[nLAhm1YAlPNhE99B1
+R8
+31
+R23
+R24
+R25
+R12
+R13
+!s100 h91n@n@OMe9io]6SkOeVX0
+!i10b 1
+Eregistradorcargaparalela
+R14
+R3
+R4
+R5
+Z26 8C:/Users/Usuario/Desktop/SD/Aula 15/continuação/final/RegistradorCargaParalela.vhd
+Z27 FC:/Users/Usuario/Desktop/SD/Aula 15/continuação/final/RegistradorCargaParalela.vhd
+l0
+L5
+VUL8N73mL6;Nk<[U9K@=?^2
+R8
+31
+Z28 !s108 1561925632.715000
+Z29 !s90 -reportprogress|300|-93|-work|work|C:/Users/Usuario/Desktop/SD/Aula 15/continuação/final/RegistradorCargaParalela.vhd|
+Z30 !s107 C:/Users/Usuario/Desktop/SD/Aula 15/continuação/final/RegistradorCargaParalela.vhd|
+R12
+R13
+!s100 U6[T_D^P[ReMk6D^ZOm@B1
+!i10b 1
+Aarch_registradorcargaparalela
+R3
+R4
+DEx4 work 24 registradorcargaparalela 0 22 UL8N73mL6;Nk<[U9K@=?^2
+l22
+L21
+VL>HL8IEW7A99B@fYTWBDY1
+R8
+31
+R28
+R29
+R30
+R12
+R13
+!s100 KFhmP7a[0M@BdPRjoP9Qh2
+!i10b 1
+Etb_final
+Z31 w1561848738
+R2
+R3
+R4
+R5
+Z32 8C:/Users/Usuario/Desktop/SD/Aula 15/continuação/final/tb_Final.vhd
+Z33 FC:/Users/Usuario/Desktop/SD/Aula 15/continuação/final/tb_Final.vhd
+l0
+L5
+Vi=kB51i2gST?gPf;7m8jW1
+!s100 a>[>3lk2j0:XX=dH4=Oe02
+R8
+31
+!i10b 1
+Z34 !s108 1561925633.540000
+Z35 !s90 -reportprogress|300|-93|-work|work|C:/Users/Usuario/Desktop/SD/Aula 15/continuação/final/tb_Final.vhd|
+Z36 !s107 C:/Users/Usuario/Desktop/SD/Aula 15/continuação/final/tb_Final.vhd|
+R12
+R13
+Ahardware
+R2
+R3
+R4
+DEx4 work 8 tb_final 0 22 i=kB51i2gST?gPf;7m8jW1
+l28
+L8
+V@lD2P7zUk?g;QMR7CIJY>1
+!s100 0cV3KcF`MNV=i^KCEK<WW0
+R8
+31
+!i10b 1
+R34
+R35
+R36
+R12
+R13
