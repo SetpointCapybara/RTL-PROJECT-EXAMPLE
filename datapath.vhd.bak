@@ -1,0 +1,23 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity datapath is
+	port
+	(
+		w			   :in std_logic;
+		tmp0_ld 	   :in std_logic;
+		tmp1_ld	 	:in std_logic;
+		tmp2_ld	   :in std_logic;
+		tmp3_ld		:in std_logic;
+		md_ld			:in std_logic;
+		CT 	      :in std_logic_vector(15 downto 0);
+		WT		      :in std_logic_vector(15 downto 0)
+		md_lt_WT		:out std_logic;
+	);
+end datapath;
+
+architecture hardware of datapath is
+
+
+end hardware;

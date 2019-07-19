@@ -1,0 +1,29 @@
+library ieee;
+use ieee.std_logic_1164.all;
+-------------------------------------------------------
+entity RegistradorCargaParalela is
+	generic(
+		n: integer := 4 
+	);
+
+	port(
+		I        : in std_logic_vector(n-1 downto 0);
+		Load     : in std_logic;
+		clk     : in std_logic;
+		O        : out std_logic_vector(n-1 downto 0)
+	);
+end RegistradorCargaParalela;	
+
+architecture arch_RegistradorCargaParalela of RegistradorCargaParalela is
+begin
+	process (clk,Load)
+	begin
+		if (Load = '1' and rising_edge(clk)) then
+			O <= I;
+		end if;
+	end process;
+end arch_RegistradorCargaParalela;
+			
+		
+		
+	

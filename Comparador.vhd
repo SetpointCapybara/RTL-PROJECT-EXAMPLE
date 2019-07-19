@@ -1,0 +1,36 @@
+library IEEE;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+------------------------------------------------
+
+entity Comparador is
+	port(
+		-----------------Entradas------------------
+		ent_a, ent_b : in std_logic_vector(15 downto 0);
+		
+		-------------------Saídas------------------
+		maior : out std_logic;
+		menor : out std_logic
+	);
+	end Comparador;
+
+architecture arch_comparador of Comparador is
+	signal sig_maior : std_logic;
+	signal sig_menor : std_logic;
+	begin
+		process (sig_maior,sig_menor)
+			begin
+				maior <= sig_maior;
+				menor <= sig_menor;
+		end process;
+		process (ent_a, ent_b)
+			begin
+				if (ent_a > ent_b) then
+					sig_maior <= '1';
+					sig_menor <= '0';
+				else
+					sig_maior <= '0';
+					sig_menor <= '1';
+				end if;
+		end process;
+end arch_comparador;

@@ -1,0 +1,44 @@
+-- synthesis library LSD_Componentes
+library IEEE;
+use ieee.std_logic_1164.all;
+
+entity Comparador is
+	generic(
+		n: integer := 4
+	);
+	port(
+		ent_a, ent_b : in std_logic_vector(n-1 downto 0);
+		maior : out std_logic;
+		menor : out std_logic;
+		igual : out std_logic
+	);
+	end Comparador;
+
+architecture arch_comparador of comparador is
+	signal sig_maior : std_logic;
+	signal sig_menor : std_logic;
+	signal sig_igual : std_logic;	
+	begin
+		process (sig_maior,sig_menor,sig_igual)
+			begin
+				maior <= sig_maior;
+				menor <= sig_menor;
+				igual <= sig_igual;
+		end process;
+		process (ent_a, ent_b)
+			begin
+				if (ent_a > ent_b) then
+					sig_maior <= '1';
+					sig_menor <= '0';
+					sig_igual <= '0';
+				elsif (ent_a < ent_b) then
+					sig_maior <= '0';
+					sig_menor <= '1';
+					sig_igual <= '0';
+				else
+					sig_maior <= '0';
+					sig_menor <= '0';
+					sig_igual <= '1';
+				end if;
+		end process;
+end arch_comparador;

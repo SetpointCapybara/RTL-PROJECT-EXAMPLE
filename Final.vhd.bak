@@ -1,0 +1,163 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+------------------------------------------------
+
+entity AULA15 is
+	port
+	(
+		-----------------Entradas------------------
+		clk			:in std_logic;
+		clr			:in std_logic; --para garantir onde vai começar
+		CT 	      :in std_logic;
+		WT		      :in std_logic_vector(15 downto 0)
+
+	);
+end AULA15;
+	
+
+architecture arch_FINAL of AULA15 is
+	
+	component FSM is
+	port
+	(
+		--Entradas
+		clk			:in std_logic;
+		clear			:in std_logic; --para garantir onde vai começar
+		cont			:in integer range 0 to 3;
+		gt_maior    :in std_logic;
+		lt_menor    :in std_logic;
+		b0				:in std_logic;
+		b1				:in std_logic;
+		b2		   	:in std_logic;
+	   b3 			:in std_logic;
+		
+		--Saída
+		zeraCont	   :out std_logic;
+		Lendo  	   :out std_logic;
+		Escrevendo  :out std_logic;
+		data_out	   :out std_logic;
+		data_addr	:out std_logic;
+		load_menor  :out std_logic;
+		load_maior  :out std_logic;
+		mostrar     :out std_logic_vector(1 downto 0)
+	);
+	end component;
+	
+	component Comparador is
+	generic(
+		n: integer := 4
+	);
+	port(
+		ent_a, ent_b : in std_logic_vector(n-1 downto 0);
+		maior : out std_logic;
+		menor : out std_logic;
+		igual : out std_logic
+	);
+	end component;
+	
+	component BancoRegistradores is
+	generic(
+		m: integer := 4; -- Tamanho do banco por default = 8
+		n: integer := 4 -- Numero de bits por default = 1
+	);
+
+	port(
+		------------------Entradas------------------
+		W_data      : in std_logic_vector(n-1 downto 0);
+		R_addr	   : in integer range 0 to m-1;
+		W_addr      : in integer range 0 to m-1;
+		W_en       	: in std_logic;
+		R_en       	: in std_logic;
+		
+		clk			: in std_logic;
+		-------------------Saídas-------------------
+		R_data	   : out std_logic_vector(n-1 downto 0)
+	);
+	end component;	
+
+	component Contador is
+	generic (
+		n : integer := 3 
+	);
+	port(
+		clear : in  std_logic;
+		clk :   in  std_logic;
+		saida : out integer range 0 to n;
+		modo :  in  std_logic  -- esta entrada define o modo de operaçao (Ascendente se 1 e Descendente se 0)
+	);
+	end component;
+	
+	component RegistradorCargaParalela is
+	generic(
+		n: integer := 4 
+	);
+
+	port(
+		------------------Entradas------------------
+		I        : in std_logic_vector(n-1 downto 0);
+		Load     : in std_logic;
+		clk     : in std_logic;
+		-------------------Saídas-------------------
+		O        : out std_logic_vector(n-1 downto 0)
+	);
+	end component;	
+
+	component mux4X1 is
+	generic(
+		n: integer := 4 
+	);
+
+	port (I0 :in std_logic_vector(n-1 downto 0);
+			I1 :in std_logic_vector(n-1 downto 0);
+			I2 :in std_logic_vector(n-1 downto 0);
+			I3 :in std_logic_vector(n-1 downto 0);
+			slct1: in std_logic_vector(1 downto 0);
+			Output : out std_logic_vector(n-1 downto 0));
+	end component;
+	
+	signal contagem, OutAddr: integer range 0 to 3;
+	signal seletor: std_logic_vector(1 downto 0);
+	signal data_rd, maior, menor, OutData: std_logic_vector(3 downto 0);
+	signal gt, lt, zeraCount, ler, escrever, ld_maior, ld_menor, OutA, OutD: std_logic;
+	
+
+	begin 
+	
+	
+	
+	MainFSM:   FSM port map (clk,clear,contagem,gt,lt,b0,b1,b2,b3,zeraCount,ler,escrever,OutD,OutA,ld_menor,ld_maior,seletor);
+	BancoRegistrador: BancoRegistradores port map (OutData,OutAddr,OutAddr,escrever,ler,clk,data_rd);
+	KeepMaior: RegistradorCargaParalela port map (data_rd,ld_maior,clk,maior);
+	KeepMenor: RegistradorCargaParalela port map (data_rd,ld_menor,clk,menor);
+	compMaior: Comparador port map(data_rd,maior,gt,open,open);
+	compMenor: Comparador port map(data_rd,menor,open,lt,open);
+	contador1: Contador port map(zeraCount,clk,contagem,'1');
+	--Varred:  Varredura port map (output1,output0,clk,clr,Px,Dx);
+	
+	process (OutD,OutA, seletor) is
+	begin
+		if (seletor = "01") then
+			display <= maior;
+		elsif (seletor = "10") then
+		display <= menor;
+		elsif (seletor = "11") then
+		display <= data_rd;
+		else 
+		display <= "0000";
+		end if;
+		
+		if (OutD = '0') then
+			OutData <= "0000";
+		else 
+			OutData <= data_in;
+		end if;
+		
+		if (OutA = '0') then
+			OutAddr <= contagem;
+		else 
+			OutAddr <= Addr;
+		end if;
+	end process;
+end arch_FINAL;
+
