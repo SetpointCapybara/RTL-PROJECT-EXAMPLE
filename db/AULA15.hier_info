@@ -1,0 +1,247 @@
+|Final
+clk_in => FSM:controller_connections.clk
+clk_in => datapath:Datapath_connections.clock
+clr_in => FSM:controller_connections.clr
+CT_in[0] => datapath:Datapath_connections.CT[0]
+CT_in[1] => datapath:Datapath_connections.CT[1]
+CT_in[2] => datapath:Datapath_connections.CT[2]
+CT_in[3] => datapath:Datapath_connections.CT[3]
+CT_in[4] => datapath:Datapath_connections.CT[4]
+CT_in[5] => datapath:Datapath_connections.CT[5]
+CT_in[6] => datapath:Datapath_connections.CT[6]
+CT_in[7] => datapath:Datapath_connections.CT[7]
+WT_in[0] => datapath:Datapath_connections.WT[0]
+WT_in[1] => datapath:Datapath_connections.WT[1]
+WT_in[2] => datapath:Datapath_connections.WT[2]
+WT_in[3] => datapath:Datapath_connections.WT[3]
+WT_in[4] => datapath:Datapath_connections.WT[4]
+WT_in[5] => datapath:Datapath_connections.WT[5]
+WT_in[6] => datapath:Datapath_connections.WT[6]
+WT_in[7] => datapath:Datapath_connections.WT[7]
+w_out <= FSM:controller_connections.w
+
+
+|Final|FSM:controller_connections
+clk => estado_atual~1.DATAIN
+clr => Selector3.IN4
+clr => estado_atual~3.DATAIN
+clr => combinacional.IN0
+clr => combinacional.IN0
+clr => Selector2.IN2
+clr => proximo_estado.S5.DATAB
+clr => proximo_estado.S6.DATAB
+md_lt_WT => combinacional.IN1
+md_lt_WT => combinacional.IN1
+w <= w$latch.DB_MAX_OUTPUT_PORT_TYPE
+tmp0_ld <= <VCC>
+tmp1_ld <= <VCC>
+tmp2_ld <= <VCC>
+tmp3_ld <= <VCC>
+md_ld <= <VCC>
+
+
+|Final|datapath:Datapath_connections
+clock => RegistradorCargaParalela:register_tmp0.clk
+clock => RegistradorCargaParalela:register_tmp1.clk
+clock => RegistradorCargaParalela:register_tmp2.clk
+clock => RegistradorCargaParalela:register_tmp3.clk
+clock => RegistradorCargaParalela:register_md.clk
+tmp0_ld => RegistradorCargaParalela:register_tmp0.load
+tmp1_ld => RegistradorCargaParalela:register_tmp1.load
+tmp2_ld => RegistradorCargaParalela:register_tmp2.load
+tmp3_ld => RegistradorCargaParalela:register_tmp3.load
+md_ld => RegistradorCargaParalela:register_md.load
+CT[0] => RegistradorCargaParalela:register_tmp0.i[0]
+CT[1] => RegistradorCargaParalela:register_tmp0.i[1]
+CT[2] => RegistradorCargaParalela:register_tmp0.i[2]
+CT[3] => RegistradorCargaParalela:register_tmp0.i[3]
+CT[4] => RegistradorCargaParalela:register_tmp0.i[4]
+CT[5] => RegistradorCargaParalela:register_tmp0.i[5]
+CT[6] => RegistradorCargaParalela:register_tmp0.i[6]
+CT[7] => RegistradorCargaParalela:register_tmp0.i[7]
+WT[0] => LessThan0.IN8
+WT[1] => LessThan0.IN7
+WT[2] => LessThan0.IN6
+WT[3] => LessThan0.IN5
+WT[4] => LessThan0.IN4
+WT[5] => LessThan0.IN3
+WT[6] => LessThan0.IN2
+WT[7] => LessThan0.IN1
+md_lt_WT <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Final|datapath:Datapath_connections|RegistradorCargaParalela:register_tmp0
+i[0] => result1[0]~reg0.DATAIN
+i[1] => result1[1]~reg0.DATAIN
+i[2] => result1[2]~reg0.DATAIN
+i[3] => result1[3]~reg0.DATAIN
+i[4] => result1[4]~reg0.DATAIN
+i[5] => result1[5]~reg0.DATAIN
+i[6] => result1[6]~reg0.DATAIN
+i[7] => result1[7]~reg0.DATAIN
+load => result1[0]~reg0.ENA
+load => result1[1]~reg0.ENA
+load => result1[2]~reg0.ENA
+load => result1[3]~reg0.ENA
+load => result1[4]~reg0.ENA
+load => result1[5]~reg0.ENA
+load => result1[6]~reg0.ENA
+load => result1[7]~reg0.ENA
+clk => result1[0]~reg0.CLK
+clk => result1[1]~reg0.CLK
+clk => result1[2]~reg0.CLK
+clk => result1[3]~reg0.CLK
+clk => result1[4]~reg0.CLK
+clk => result1[5]~reg0.CLK
+clk => result1[6]~reg0.CLK
+clk => result1[7]~reg0.CLK
+result1[0] <= result1[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[1] <= result1[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[2] <= result1[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[3] <= result1[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[4] <= result1[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[5] <= result1[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[6] <= result1[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[7] <= result1[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Final|datapath:Datapath_connections|RegistradorCargaParalela:register_tmp1
+i[0] => result1[0]~reg0.DATAIN
+i[1] => result1[1]~reg0.DATAIN
+i[2] => result1[2]~reg0.DATAIN
+i[3] => result1[3]~reg0.DATAIN
+i[4] => result1[4]~reg0.DATAIN
+i[5] => result1[5]~reg0.DATAIN
+i[6] => result1[6]~reg0.DATAIN
+i[7] => result1[7]~reg0.DATAIN
+load => result1[0]~reg0.ENA
+load => result1[1]~reg0.ENA
+load => result1[2]~reg0.ENA
+load => result1[3]~reg0.ENA
+load => result1[4]~reg0.ENA
+load => result1[5]~reg0.ENA
+load => result1[6]~reg0.ENA
+load => result1[7]~reg0.ENA
+clk => result1[0]~reg0.CLK
+clk => result1[1]~reg0.CLK
+clk => result1[2]~reg0.CLK
+clk => result1[3]~reg0.CLK
+clk => result1[4]~reg0.CLK
+clk => result1[5]~reg0.CLK
+clk => result1[6]~reg0.CLK
+clk => result1[7]~reg0.CLK
+result1[0] <= result1[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[1] <= result1[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[2] <= result1[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[3] <= result1[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[4] <= result1[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[5] <= result1[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[6] <= result1[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[7] <= result1[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Final|datapath:Datapath_connections|RegistradorCargaParalela:register_tmp2
+i[0] => result1[0]~reg0.DATAIN
+i[1] => result1[1]~reg0.DATAIN
+i[2] => result1[2]~reg0.DATAIN
+i[3] => result1[3]~reg0.DATAIN
+i[4] => result1[4]~reg0.DATAIN
+i[5] => result1[5]~reg0.DATAIN
+i[6] => result1[6]~reg0.DATAIN
+i[7] => result1[7]~reg0.DATAIN
+load => result1[0]~reg0.ENA
+load => result1[1]~reg0.ENA
+load => result1[2]~reg0.ENA
+load => result1[3]~reg0.ENA
+load => result1[4]~reg0.ENA
+load => result1[5]~reg0.ENA
+load => result1[6]~reg0.ENA
+load => result1[7]~reg0.ENA
+clk => result1[0]~reg0.CLK
+clk => result1[1]~reg0.CLK
+clk => result1[2]~reg0.CLK
+clk => result1[3]~reg0.CLK
+clk => result1[4]~reg0.CLK
+clk => result1[5]~reg0.CLK
+clk => result1[6]~reg0.CLK
+clk => result1[7]~reg0.CLK
+result1[0] <= result1[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[1] <= result1[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[2] <= result1[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[3] <= result1[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[4] <= result1[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[5] <= result1[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[6] <= result1[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[7] <= result1[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Final|datapath:Datapath_connections|RegistradorCargaParalela:register_tmp3
+i[0] => result1[0]~reg0.DATAIN
+i[1] => result1[1]~reg0.DATAIN
+i[2] => result1[2]~reg0.DATAIN
+i[3] => result1[3]~reg0.DATAIN
+i[4] => result1[4]~reg0.DATAIN
+i[5] => result1[5]~reg0.DATAIN
+i[6] => result1[6]~reg0.DATAIN
+i[7] => result1[7]~reg0.DATAIN
+load => result1[0]~reg0.ENA
+load => result1[1]~reg0.ENA
+load => result1[2]~reg0.ENA
+load => result1[3]~reg0.ENA
+load => result1[4]~reg0.ENA
+load => result1[5]~reg0.ENA
+load => result1[6]~reg0.ENA
+load => result1[7]~reg0.ENA
+clk => result1[0]~reg0.CLK
+clk => result1[1]~reg0.CLK
+clk => result1[2]~reg0.CLK
+clk => result1[3]~reg0.CLK
+clk => result1[4]~reg0.CLK
+clk => result1[5]~reg0.CLK
+clk => result1[6]~reg0.CLK
+clk => result1[7]~reg0.CLK
+result1[0] <= result1[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[1] <= result1[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[2] <= result1[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[3] <= result1[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[4] <= result1[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[5] <= result1[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[6] <= result1[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[7] <= result1[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Final|datapath:Datapath_connections|RegistradorCargaParalela:register_md
+i[0] => result1[0]~reg0.DATAIN
+i[1] => result1[1]~reg0.DATAIN
+i[2] => result1[2]~reg0.DATAIN
+i[3] => result1[3]~reg0.DATAIN
+i[4] => result1[4]~reg0.DATAIN
+i[5] => result1[5]~reg0.DATAIN
+i[6] => result1[6]~reg0.DATAIN
+i[7] => result1[7]~reg0.DATAIN
+load => result1[0]~reg0.ENA
+load => result1[1]~reg0.ENA
+load => result1[2]~reg0.ENA
+load => result1[3]~reg0.ENA
+load => result1[4]~reg0.ENA
+load => result1[5]~reg0.ENA
+load => result1[6]~reg0.ENA
+load => result1[7]~reg0.ENA
+clk => result1[0]~reg0.CLK
+clk => result1[1]~reg0.CLK
+clk => result1[2]~reg0.CLK
+clk => result1[3]~reg0.CLK
+clk => result1[4]~reg0.CLK
+clk => result1[5]~reg0.CLK
+clk => result1[6]~reg0.CLK
+clk => result1[7]~reg0.CLK
+result1[0] <= result1[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[1] <= result1[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[2] <= result1[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[3] <= result1[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[4] <= result1[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[5] <= result1[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[6] <= result1[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result1[7] <= result1[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
